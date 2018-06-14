@@ -32,6 +32,26 @@
         <servlet-name>AltaPlato</servlet-name>
         <servlet-class>servlet.AltaPlato</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewPlato</servlet-name>
+        <servlet-class>servlet.NewPlato</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>servlet.Logout</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ValorarPlato</servlet-name>
+        <servlet-class>servlet.ValorarPlato</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewRate</servlet-name>
+        <servlet-class>servlet.NewRate</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ValorarPlatos</servlet-name>
+        <servlet-class>servlet.ValorarPlatos</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FoodGoodServlet</servlet-name>
         <url-pattern>/FoodGoodServlet</url-pattern>
@@ -63,6 +83,26 @@
     <servlet-mapping>
         <servlet-name>AltaPlato</servlet-name>
         <url-pattern>/AltaPlato</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewPlato</servlet-name>
+        <url-pattern>/NewPlato</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ValorarPlato</servlet-name>
+        <url-pattern>/ValorarPlato</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewRate</servlet-name>
+        <url-pattern>/NewRate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ValorarPlatos</servlet-name>
+        <url-pattern>/ValorarPlatos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

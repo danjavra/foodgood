@@ -5,6 +5,8 @@
  */
 package beans;
 
+import entities.Dish;
+import entities.Rate;
 import entities.Restaurant;
 import entities.User;
 import exceptions.MisExcepciones;
@@ -54,6 +56,12 @@ public class FoodGoodEJB {
         return q.getResultList();
     }
     
+    public List<Dish> getAllDish(){
+        EntityManager em = emf.createEntityManager();
+        Query q = em.createNamedQuery("Dish.findAll");
+        return q.getResultList();
+    }
+    
      public void altaUsuario(User e) throws MisExcepciones {
         EntityManager em = emf.createEntityManager();
         User aux = em.find(User.class, e.getUsername());
@@ -71,6 +79,28 @@ public class FoodGoodEJB {
         if (aux != null) {
             em.close();
             throw new MisExcepciones("Ya existe un restaurante con este nombre");
+        }
+        em.persist(e);
+        em.close();
+    }
+     
+     public void altaPlato(Dish e) throws MisExcepciones {
+        EntityManager em = emf.createEntityManager();
+        Dish aux = em.find(Dish.class, e.getName());
+        if (aux != null) {
+            em.close();
+            throw new MisExcepciones("Ya existe un plato con este nombre");
+        }
+        em.persist(e);
+        em.close();
+    }
+     
+     public void altaRate(Rate e) throws MisExcepciones {
+        EntityManager em = emf.createEntityManager();
+        Rate aux = em.find(Rate.class, e.getIdrate());
+        if (aux != null) {
+            em.close();
+            throw new MisExcepciones("Ya existe una valoración con este id");
         }
         em.persist(e);
         em.close();

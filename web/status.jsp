@@ -4,6 +4,7 @@
     Author     : Anjo
 --%>
 
+<%@page import="entities.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,6 +15,8 @@
     <body>
           <%
             // Recogemos la variable status que nos han pasado
+            User user = (User) session.getAttribute("user");
+            Integer tipo = user.getType();
             String status = (String) request.getAttribute("status");
             // Por si llaman al jsp sin pasar por el servlet
             if (status != null) {
@@ -24,8 +27,16 @@
             }
 
         %>
-        <form action="index.jsp">
-            <input type="submit" value="Menú Principal">
+            <%
+        if(tipo==1){
+        %>
+         <form action="adminPage.jsp">
+            <input type="submit" value="Volver">
         </form>
+        <%}else{%>
+        <form action="userPage.jsp">
+            <input type="submit" value="Volver">
+        </form>
+        <%}%>
     </body>
 </html>

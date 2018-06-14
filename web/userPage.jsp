@@ -31,11 +31,11 @@
              <br/>
         <form action="NewIncidencia"  method="POST">
                 <input type="hidden" value="<%=user.getUsername()%>" name="nombreUsuario">
-                <input type="submit" value="Ver todos los platos de una especial idad indicada">
+                <input type="submit" value="Ver todos los platos de una especialidad indicada">
         </form>
               <br/>  
-        <form action="ValorarPlato" method="POST">
-         <input type="hidden" value="<%=user.getUsername()%>" name="nombreUsuario">
+        <form action="ValorarPlatos" method="POST">
+         <input type="hidden" value="<%=user.getUsername()%>" name="username">
          <input type="submit" value="Valorar un plato">
         </form>
               <br/>
