@@ -68,6 +68,18 @@
         <servlet-name>PlatosRestaurante2</servlet-name>
         <servlet-class>servlet.PlatosRestaurante2</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ModPrecioPlato</servlet-name>
+        <servlet-class>servlet.ModPrecioPlato</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ModPrecio</servlet-name>
+        <servlet-class>servlet.ModPrecio</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ModPrecio2</servlet-name>
+        <servlet-class>servlet.ModPrecio2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>FoodGoodServlet</servlet-name>
         <url-pattern>/FoodGoodServlet</url-pattern>
@@ -135,6 +147,18 @@
     <servlet-mapping>
         <servlet-name>PlatosRestaurante2</servlet-name>
         <url-pattern>/PlatosRestaurante2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ModPrecioPlato</servlet-name>
+        <url-pattern>/ModPrecioPlato</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ModPrecio</servlet-name>
+        <url-pattern>/ModPrecio</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ModPrecio2</servlet-name>
+        <url-pattern>/ModPrecio2</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

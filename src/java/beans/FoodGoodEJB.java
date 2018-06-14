@@ -10,6 +10,7 @@ import entities.Rate;
 import entities.Restaurant;
 import entities.User;
 import exceptions.MisExcepciones;
+import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -42,6 +43,12 @@ public class FoodGoodEJB {
         EntityManager em = emf.createEntityManager();
         User user = em.find(User.class, username);
         return user;
+    }
+    
+    public Dish getDishByName(String name) {
+        EntityManager em = emf.createEntityManager();
+        Dish dish = em.find(Dish.class, name);
+        return dish;
     }
     
     public Restaurant getRestaurantByName(String name){
@@ -131,5 +138,14 @@ public class FoodGoodEJB {
         }
         em.persist(e);
         em.close();
+    }
+     
+       public void editPrice(Dish e, BigDecimal newprice ){
+        EntityManager em = emf.createEntityManager();
+        Dish aux = em.find(Dish.class, e.getPrice());
+        aux.setPrice(newprice);
+        em.persist(aux);
+        em.close();
+        
     }
 }
