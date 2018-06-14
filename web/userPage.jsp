@@ -24,14 +24,14 @@
             <input type="submit" value="Dar de alta un plato">
         </form>
             <br/>
-        <form action="DatosPassword" method="POST">
+        <form action="AllValoraciones" method="POST">
             <input type="hidden" value="<%=user.getUsername()%>" name="username">
             <input type="submit" value="Ver todas las valoraciones de un plato">
         </form>
              <br/>
-        <form action="NewIncidencia"  method="POST">
-                <input type="hidden" value="<%=user.getUsername()%>" name="nombreUsuario">
-                <input type="submit" value="Ver todos los platos de una especialidad indicada">
+        <form action="AllDishBySpeciality"  method="POST">
+                <input type="hidden" value="<%=user.getUsername()%>" name="username">
+                <input type="submit" value="Ver todos los platos de un tipo indicado">
         </form>
               <br/>  
         <form action="ValorarPlatos" method="POST">

@@ -44,6 +44,33 @@ public class FoodGoodEJB {
         return user;
     }
     
+    public Restaurant getRestaurantByName(String name){
+        EntityManager em = emf.createEntityManager();
+        Restaurant restaurant = em.find(Restaurant.class, name);
+        return restaurant;    
+    }
+    
+    public Restaurant getRestaurantBySpeciality(String type){
+        EntityManager em = emf.createEntityManager();
+        Restaurant restaurant = em.find(Restaurant.class, type);
+        return restaurant;    
+    }
+     
+    public List<Dish> getAllDishByRestaurant(String restaurante) {
+        EntityManager em = emf.createEntityManager();
+        Restaurant aux = em.find(Restaurant.class, restaurante);
+        Query q = em.createQuery("SELECT i FROM Dish i where i.restaurant = :restaurant");
+        q.setParameter("restaurant", aux);
+        return q.getResultList();
+    }
+    
+    public List<Dish> getDishByRestaurant(Restaurant e){
+        EntityManager em = emf.createEntityManager();
+        Query q = em.createQuery("SELECT i FROM Dish i WHERE i.restaurant = :restaurant ");
+        q.setParameter("restaurant", e);
+        return q.getResultList();
+    }
+
     public List<User> getAllUsers(){
         EntityManager em = emf.createEntityManager();
         Query q = em.createNamedQuery("User.findAll");
